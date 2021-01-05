@@ -1,5 +1,8 @@
 # Inflection
 
+![CI][ci badge]
+[![Documentation][documentation badge]][documentation]
+
 A Swift port of the string inflection functionality from
 [Rails ActiveSupport](https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/inflections.rb),
 with localizations for the following locales adapted from [Inflections by @davidcelis](https://github.com/davidcelis/inflections):
@@ -98,3 +101,7 @@ MIT
 ## Contact
 
 Mattt ([@mattt](https://twitter.com/mattt))
+
+[ci badge]: https://github.com/SwiftDocOrg/Inflection/workflows/CI/badge.svg
+[documentation badge]: https://github.com/SwiftDocOrg/Inflection/workflows/Documentation/badge.svg
+[documentation]: https://github.com/SwiftDocOrg/Inflection/wiki
