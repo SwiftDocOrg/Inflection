@@ -28,6 +28,25 @@ with localizations for the following locales adapted from [Inflections by @david
 ```swift
 import Inflection
 
+// Rails-style inflectors
+
+"employee_salary".camelized() // "employeeSalary"
+"employee_salary".camelized(uppercasingFirstLetter: true) // "EmployeeSalary"
+
+"employee_salary".dasherized() // "employee-salary"
+
+"customer_support".humanized() // "Customer Support"
+"parent_id".humanized() // "Parent"
+
+"Donald E. Knuth".parameterized() // "donald-e-knuth"
+"^très|Jolie-- ".parameterized() // "tres-jolie"
+
+"guardians_of_the_galaxy".titleized() // "Guardians Of The Galaxy"
+
+"HTTPRequest".underscored() // "http_request"
+
+// Pluralization and singularization
+
 for singular in ["person", "tomato", "matrix", "octopus", "fish"] {
     let plural = singular.pluralized()
     print("\(singular) → \(plural) → \(plural.singularized())")
