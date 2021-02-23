@@ -229,7 +229,7 @@ public final class Inflector {
                       let resultRange = Range(result.range, in: term)
                 else { return }
 
-                term.replaceSubrange(resultRange, with: term[resultRange].lowercased(with: locale))
+                term.replaceSubrange(resultRange, with: term[resultRange].lowercased(with: self.locale))
             }
         } catch {
             fatalError(error.localizedDescription)
@@ -249,7 +249,7 @@ public final class Inflector {
 
                 let candidate = String(term[candidateRange])
 
-                let replacement =  acronyms.contains(candidate) ? candidate : candidate.capitalized(with: locale)
+                let replacement = self.acronyms.contains(candidate) ? candidate : candidate.capitalized(with: self.locale)
                 if result.range(at: 1).location != NSNotFound {
                     defer { offset += 1 }
                     term.replaceSubrange(resultRange.offset(by: offset, in: term), with: "/" + replacement)
@@ -325,10 +325,10 @@ public final class Inflector {
                           whereSeparator: { !$0.isLetter && !$0.isNumber })
                    .map { component in
                        let candidate = component.uppercased()
-                       if acronyms.contains(candidate) {
+                       if self.acronyms.contains(candidate) {
                            return candidate
                        } else if capitalizing {
-                           return component.capitalized(with: locale)
+                           return component.capitalized(with: self.locale)
                        } else {
                            return component.lowercased()
                        }
@@ -542,7 +542,7 @@ fileprivate extension NSRegularExpression {
     func replacingMatches(in string: String, range: Range<String.Index>? = nil, with template: String) -> String {
         let mutableString = NSMutableString(string: string)
         let range = NSRange(range ?? string.startIndex..<string.endIndex, in: string)
-        replaceMatches(in: mutableString, options: [], range: range, withTemplate: template)
+        _ = replaceMatches(in: mutableString, options: [], range: range, withTemplate: template)
 
         return mutableString as String
     }
