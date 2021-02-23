@@ -322,7 +322,7 @@ public final class Inflector {
         }
 
         return term.split(omittingEmptySubsequences: true,
-                          whereSeparator: { !$0.isLetter && !$0.isNumber })
+                          whereSeparator: { !$0.isLetter && !$0.isNumber && $0 != ":" })
                    .map { component in
                        let candidate = component.uppercased()
                        if acronyms.contains(candidate) {

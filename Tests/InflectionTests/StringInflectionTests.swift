@@ -42,8 +42,9 @@ final class StringInflectionTests: XCTestCase {
     }
 
     func testTitleization() {
-        XCTAssertEqual("TheManWithoutAPast".titleized(), "The Man Without A Past")
-        XCTAssertEqual("raiders_of_the_lost_ark".titleized(), "Raiders Of The Lost Ark")
+        XCTAssertEqual("TheIncredibleHulk".titleized(), "The Incredible Hulk")
+        XCTAssertEqual("guardians_of_the_galaxy".titleized(), "Guardians Of The Galaxy")
+        XCTAssertEqual("spider-man: far from home".titleized(), "Spider Man: Far From Home")
         XCTAssertEqual("string_ending_with_id".titleized(preservingIDSuffix: true), "String Ending With Id")
     }
 
