@@ -41,6 +41,8 @@ import Inflection
 "Donald E. Knuth".parameterized() // "donald-e-knuth"
 "^très|Jolie-- ".parameterized() // "tres-jolie"
 
+"TheIncredibleHulk".titleized() // "The Incredible Hulk"
+"spider-man: far from home".titleized() // "Spider Man: Far From Home"
 "guardians_of_the_galaxy".titleized() // "Guardians Of The Galaxy"
 
 "HTTPRequest".underscored() // "http_request"
