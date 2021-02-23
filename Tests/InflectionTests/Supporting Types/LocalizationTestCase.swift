@@ -1,6 +1,7 @@
 import XCTest
 @testable import Inflection
 
+#if os(macOS)
 open class LocalizationTestCase: XCTestCase {
     open class var locale: Locale { .current }
     open class var pluralizations: [String: String] { [:] }
@@ -58,3 +59,9 @@ open class LocalizationTestCase: XCTestCase {
         Locale.current.localizedString(forIdentifier: inflector.locale.identifier) ?? "\(inflector.locale.identifier) locale"
     }
 }
+#else
+open class LocalizationTestCase: XCTestCase {
+    open class var locale: Locale { .current }
+    open class var pluralizations: [String: String] { [:] }
+}
+#endif
